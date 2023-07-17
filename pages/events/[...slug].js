@@ -6,4 +6,4 @@ function FilteredEventsPage() {
     );
 }
 
-export default FilteredEventsPage;  
+export default FilteredEventsPage;
