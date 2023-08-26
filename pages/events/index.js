@@ -1,4 +1,5 @@
 // import { getAllEvents } from "../../dummy-data";
+import Head from "next/head";
 import { getAllEvents } from "../../helpers/api-util";
 import { useRouter } from "next/router";
 import EventList from "../../components/events/event-list";
@@ -17,6 +18,13 @@ function AllEventsPage(props) {
   };
   return (
     <>
+      <Head>
+        <title>All Events</title>
+        <meta
+          name="description"
+          content="Find a lot of Events that make you happier"
+        />
+      </Head>
       <EventsSearch onSearch={findEventsHandler} />
       <EventList items={events} />
     </>
@@ -30,7 +38,7 @@ export async function getStaticProps() {
     props: {
       events: events,
     },
-    revalidate: 60, 
+    revalidate: 60,
   };
 }
 
